@@ -14,5 +14,10 @@ const arr =  [{
             "course":"Full Stack developer"
         }]
 
+const Data=[
+    {
+        "def":"what is express:Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application.Its a layer built on the top of the Node js that helps manage servers and routes."
+    }
+]
 
-module.exports=arr
+module.exports={arr,Data}

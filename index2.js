@@ -1,5 +1,9 @@
 const express = require("express");
+const route = require("./router/userRouting")
+const Productroute = require("./router/productRouting")
 const dummydata = require("./dummydata")
+const {Data} = require("./dummydata")
+const port=5000
 const cors=require("cors")
 const arr=[]
 const app = express();
@@ -14,7 +18,12 @@ app.get("/contact",(req,res)=>{
     res.send("i am contact")
 });
 app.get("/",(req,res)=>{
-    res.send("i am home")
+    // res.send("what is express:Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application.Its a layer built on the top of the Node js that helps manage servers and routes.")
+    res.send({
+        "msg":"what is express",
+        ans:Data
+    })
+
 });
 app.get("/fetchJson",(req,res)=>{
     res.send(dummydata)
@@ -26,6 +35,9 @@ app.post("/login",(req,res)=>{
     res.send(arr)
 });
 
-app.listen(3000,()=>{
-    console.log("server is good")
+app.use("/user",route)
+app.use("/user",Productroute)
+
+app.listen(5000,()=>{
+    console.log(`server is good on ${port}`)
 })
