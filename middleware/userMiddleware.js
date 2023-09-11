@@ -5,6 +5,7 @@ const validate=(req,res,next)=>{
             next();
         }else{
             res.send({msg:"user not allowed"});
+            console.log("specific middleware running")
         }
     }
 // };
