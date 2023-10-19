@@ -4,13 +4,15 @@ const port=3001;
 const cors=require("cors")
 const validate=require("./middleware/userMiddleware")
 const  {login,signup,register} = require("./controller/userController")
+const routes = require("./router/userRouting")
 
 app.use(cors());
-const appmiddle=(req,res,next)=>{
-    res.send("APP level middleware running")
-    console.log("APP level middleware running")
-}
-app.use(appmiddle) 
+app.use("/api",routes)
+// const appmiddle=(req,res,next)=>{
+//     res.send("APP level middleware running")
+//     console.log("APP level middleware running")
+// }
+// app.use(appmiddle) 
 
 app.get("/api/readData",(req,res)=>{
     res.send("welcome")
@@ -22,9 +24,9 @@ app.get("/api/main",(req,res)=>{
     })
 })
 
-app.get("/login",validate,login)
-app.get("/signup",validate,signup) 
-app.get("/register",register)
+// app.get("/login",validate,login)
+// app.get("/signup",validate,signup) 
+// app.get("/register",register)
 
 
 

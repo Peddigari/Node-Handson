@@ -1,13 +1,13 @@
 const login=(req,res)=>{
-    //logic
+    res.send("Login page")
     
 }
 const signup=((req,res)=>{
-    //logic
+    res.send("signup page")
     
 })
 const register=((req,res)=>{
-    //logic
+    res.send("register page")
     
 })
 module.exports = {login,signup,register}
